@@ -38,8 +38,9 @@ const Index = () => {
               <Link to={`/state/${state.id}`} key={state.id}>
                 <Card className="overflow-hidden hover-lift hover:shadow-md transition-all duration-300 h-full">
                   <div 
-                    className="h-32 bg-cover bg-center"
+                    className="h-40 bg-cover bg-center"
                     style={{ backgroundImage: `url(${placeholderImageByState[state.id]})` }}
+                    aria-label={`Traditional attire from ${state.name}`}
                   ></div>
                   <CardContent className="p-4">
                     <h3 className="font-display font-medium text-lg">{state.name}</h3>
@@ -59,10 +60,11 @@ const Index = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {states.slice(0, 3).map((state) => (
               <div key={state.id} className="group relative overflow-hidden rounded-lg shadow-md hover-lift">
-                <div 
-                  className="aspect-[4/3] bg-cover bg-center"
-                  style={{ backgroundImage: `url(${placeholderImageByState[state.id]})` }}
-                ></div>
+                <img 
+                  src={placeholderImageByState[state.id]} 
+                  alt={`Traditional clothing from ${state.name}`}
+                  className="aspect-[4/3] w-full object-cover"
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex flex-col justify-end p-6">
                   <h3 className="font-display text-xl text-white mb-2">{state.name}</h3>
                   <p className="text-white/80 text-sm mb-4 line-clamp-2">{state.description}</p>

@@ -8,6 +8,12 @@ import { ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Index = () => {
+  // Create a custom placeholder map that uses the uploaded image for Maharashtra
+  const customPlaceholderImages = {
+    ...placeholderImageByState,
+    maharashtra: '/lovable-uploads/2345b21f-da85-4329-bea1-c447af56b151.png'
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
@@ -39,7 +45,7 @@ const Index = () => {
                 <Card className="overflow-hidden hover-lift hover:shadow-md transition-all duration-300 h-full">
                   <div 
                     className="h-40 bg-cover bg-center"
-                    style={{ backgroundImage: `url(${placeholderImageByState[state.id]})` }}
+                    style={{ backgroundImage: `url(${state.id === 'maharashtra' ? customPlaceholderImages.maharashtra : placeholderImageByState[state.id]})` }}
                     aria-label={`Traditional attire from ${state.name}`}
                   ></div>
                   <CardContent className="p-4">
@@ -61,7 +67,7 @@ const Index = () => {
             {states.slice(0, 3).map((state) => (
               <div key={state.id} className="group relative overflow-hidden rounded-lg shadow-md hover-lift">
                 <img 
-                  src={placeholderImageByState[state.id]} 
+                  src={state.id === 'maharashtra' ? customPlaceholderImages.maharashtra : placeholderImageByState[state.id]} 
                   alt={`Traditional clothing from ${state.name}`}
                   className="aspect-[4/3] w-full object-cover"
                 />

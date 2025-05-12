@@ -1,6 +1,5 @@
 
 import React from 'react';
-import IndiaMap from '../components/IndiaMap';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
@@ -23,12 +22,6 @@ const Index = () => {
               </h1>
               <p className="text-lg md:text-xl mb-8 text-muted-foreground">
                 Explore the cultural heritage through authentic regional clothing from across the nation.
-              </p>
-              <div className="py-6">
-                <IndiaMap />
-              </div>
-              <p className="text-sm text-muted-foreground mt-4">
-                Click on a highlighted state to explore traditional attire
               </p>
             </div>
           </div>

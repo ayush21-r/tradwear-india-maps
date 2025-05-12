@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import { Link } from 'react-router-dom';
 import { placeholderImageByState, states } from '../data';
 import { ArrowRight } from 'lucide-react';
+import { Card, CardContent } from '@/components/ui/card';
 
 const Index = () => {
   return (
@@ -32,6 +33,29 @@ const Index = () => {
             </div>
           </div>
           <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-background to-transparent"></div>
+        </section>
+
+        {/* State Cards Section */}
+        <section className="container mx-auto px-4 py-10">
+          <h2 className="font-display text-2xl md:text-3xl font-semibold mb-6 text-center">
+            Explore States
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            {states.map((state) => (
+              <Link to={`/state/${state.id}`} key={state.id}>
+                <Card className="overflow-hidden hover-lift hover:shadow-md transition-all duration-300 h-full">
+                  <div 
+                    className="h-32 bg-cover bg-center"
+                    style={{ backgroundImage: `url(${placeholderImageByState[state.id]})` }}
+                  ></div>
+                  <CardContent className="p-4">
+                    <h3 className="font-display font-medium text-lg">{state.name}</h3>
+                    <p className="text-sm text-muted-foreground line-clamp-2">{state.description}</p>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
+          </div>
         </section>
 
         {/* Featured States Section */}

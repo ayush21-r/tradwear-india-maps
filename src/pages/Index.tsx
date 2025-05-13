@@ -8,10 +8,14 @@ import { ArrowRight } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 
 const Index = () => {
-  // Create a custom placeholder map that uses the uploaded image for Maharashtra
+  // Create a custom placeholder map that uses the uploaded images for all states
   const customPlaceholderImages = {
     ...placeholderImageByState,
-    maharashtra: '/lovable-uploads/2345b21f-da85-4329-bea1-c447af56b151.png'
+    maharashtra: '/lovable-uploads/2345b21f-da85-4329-bea1-c447af56b151.png',
+    gujarat: '/lovable-uploads/c0a9a2ad-49e4-4c4d-99a8-4c136c64c89c.png',
+    assam: '/lovable-uploads/067a9ae6-01fe-42de-a7f1-755c42b7f341.png',
+    meghalaya: '/lovable-uploads/589a071a-013d-4a23-8543-4a205356c55a.png',
+    'jammu-kashmir': '/lovable-uploads/bf4f4083-6bac-48e3-96e4-2034420857ba.png'
   };
 
   return (
@@ -45,7 +49,7 @@ const Index = () => {
                 <Card className="overflow-hidden hover-lift hover:shadow-md transition-all duration-300 h-full">
                   <div 
                     className="h-40 bg-cover bg-center"
-                    style={{ backgroundImage: `url(${state.id === 'maharashtra' ? customPlaceholderImages.maharashtra : placeholderImageByState[state.id]})` }}
+                    style={{ backgroundImage: `url(${customPlaceholderImages[state.id] || placeholderImageByState[state.id]})` }}
                     aria-label={`Traditional attire from ${state.name}`}
                   ></div>
                   <CardContent className="p-4">
@@ -67,7 +71,7 @@ const Index = () => {
             {states.slice(0, 3).map((state) => (
               <div key={state.id} className="group relative overflow-hidden rounded-lg shadow-md hover-lift">
                 <img 
-                  src={state.id === 'maharashtra' ? customPlaceholderImages.maharashtra : placeholderImageByState[state.id]} 
+                  src={customPlaceholderImages[state.id] || placeholderImageByState[state.id]} 
                   alt={`Traditional clothing from ${state.name}`}
                   className="aspect-[4/3] w-full object-cover"
                 />

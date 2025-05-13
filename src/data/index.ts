@@ -1,4 +1,3 @@
-
 import { Product, State } from "../types";
 
 export const states: State[] = [
@@ -42,7 +41,7 @@ export const products: Product[] = [
     state: 'maharashtra',
     description: 'Luxurious handwoven silk saree featuring the iconic peacock design and gold zari work. This traditional masterpiece from Maharashtra takes over 500 hours to create.',
     price: 15000,
-    image: '/images/paithani-saree.jpg',
+    image: '/lovable-uploads/e1b0f6dc-986e-4442-b5bf-3190ec6bf515.png',
     gender: 'women',
     sizes: ['Standard', 'Custom']
   },
@@ -52,7 +51,7 @@ export const products: Product[] = [
     state: 'maharashtra',
     description: 'The traditional nine-yard saree draped in the unique Maharashtrian style, perfect for festive occasions and classical dance performances.',
     price: 8500,
-    image: '/images/nauvari-saree.jpg',
+    image: '/lovable-uploads/8bf73a27-b7c1-48f5-9b8d-cb09fd6679ed.png',
     gender: 'women',
     sizes: ['Standard', 'Custom']
   },
@@ -62,7 +61,7 @@ export const products: Product[] = [
     state: 'maharashtra',
     description: 'Elegant white cotton dhoti with a matching kurta, complete with the traditional Maharashtrian pheta (turban).',
     price: 3200,
-    image: '/images/dhoti-kurta.jpg',
+    image: '/lovable-uploads/18f0eeb7-dedc-4b5c-ba65-240bbdd983d4.png',
     gender: 'men',
     sizes: ['S', 'M', 'L', 'XL', 'XXL']
   },
@@ -72,7 +71,7 @@ export const products: Product[] = [
     state: 'maharashtra',
     description: 'Traditional bridal necklace featuring intricate gold work and pearls, an essential jewelry piece for Maharashtrian weddings.',
     price: 12000,
-    image: '/images/kolhapuri-saaj.jpg',
+    image: '/lovable-uploads/f8842ffb-e3dc-45a7-810c-10b9481a1606.png',
     gender: 'women',
     sizes: ['One Size']
   },
